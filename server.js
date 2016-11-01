@@ -7,8 +7,6 @@ webhookUri = "https://hooks.slack.com/services/T2S3G4B26/B2VU2T6SC/yapCnfX4XbkrQ
  
 slack = new Slack();
 slack.setWebhook(webhookUri);
- 
-
 
 //requiring and setting up mongo database/collections
 var mongojs = require('mongojs');
@@ -49,9 +47,12 @@ app.get('/',  function(req, res) {
 app.post('/survey', function(req, res) {
     var userName = req.body.user_name;
     var wutUSay = req.body.text;
-    console.log("this is the req" + req);
-    console.log("this is the res" + res);
-    var payload={"text": "This is a line of text in a channel.\nAnd this is what you said: " + wutUSay}
+    
+    var surveyNameEnd = indexOf("^");
+
+    var surveyName = wutUSay.substring(0, surveyNameEnd);
+
+    var payload={"text": "This is a line of text in a channel.\nAnd this is what you said: " + wutUSay + "\n" + surveyName}
 
     if (userName !== 'slackbot') {
         return res.status(200).json(payload);
@@ -59,29 +60,7 @@ app.post('/survey', function(req, res) {
     else {
         return res.status(200).end();
     }
-    // slack.webhook({
-    //     channel: "#general",
-    //     username: "webhookbot",
-    //     text: "This is posted to #general and comes from a bot named webhookbot."
-    // }, function(err, response) {
-    //     console.log(response);
-    // });
-
-    // res.send({
-    //     "text": "nameOfSurvey",
-    //     "title_link": "linkToGraph",
-    //     // might have to be just one line of text
-    //     // "text": "Read and confirmed: name1, name2\nNotread or confirmed: name1, name2"
-    //     "text": {
-    //         "Read and confirmed": ["name1", "name2"],
-    //         "Not read or confirmed": ["name1", "name2"]   
-    //     },
-    //     "attachments": [
-    //     {
-    //         "text": "Read and confirmed: name1, name2\nNotread or confirmed: name1, name2" 
-    //     }]
-    // });
-
+    
 });
 
 //starts the server letting user know the PORT
