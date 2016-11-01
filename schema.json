@@ -1,0 +1,91 @@
+"slackServer": {
+	"personal": {
+		"{user name}": {
+			"surveys": {
+				"{survey name}": {
+					"text": "{directions in slack message}",
+					"attachments": [
+						"{attachment name}",
+						"{attachment name}"
+					],
+					"buttons": [
+						"{button name}": {
+							"people": [
+								"{person's name}",
+								"{person's name}",
+								"{person's name}",
+								"{person's name}"
+							]
+						}, 
+						"{button name}": {
+							"people": [
+								"{person's name}",
+								"{person's name}",
+								"{person's name}",
+								"{person's name}"
+							]
+						} 
+					]
+				}
+			}
+		},
+		"{user name}": {
+			"surveys": {
+				"{survey name}": {
+					"text": "{directions in slack message}",
+					"attachments": [
+						"{attachment name}",
+						"{attachment name}"
+					],
+					"buttons": [
+						"{button name}": {
+							"people": [
+								"{person's name}",
+								"{person's name}",
+								"{person's name}",
+								"{person's name}"
+							]
+						}, 
+						"{button name}": {
+							"people": [
+								"{person's name}",
+								"{person's name}",
+								"{person's name}",
+								"{person's name}"
+							]
+						} 
+					]
+				}
+			}
+		}
+	},
+	"company": {
+		"surveys": {
+			"{survey name}": {
+				"text": "{directions in slack message}",
+				"attachments": [
+					"{attachment name}",
+					"{attachment name}"
+				],
+				"buttons": [
+					"{button name}": {
+						"people": [
+							"{person's name}",
+							"{person's name}",
+							"{person's name}",
+							"{person's name}"
+						]
+					}, 
+					"{button name}": {
+						"people": [
+							"{person's name}",
+							"{person's name}",
+							"{person's name}",
+							"{person's name}"
+						]
+					} 
+				]
+			}
+		}
+	}
+}
