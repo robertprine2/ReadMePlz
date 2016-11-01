@@ -47,6 +47,7 @@ app.get('/',  function(req, res) {
 });
 
 app.post('/survey', function(req, res) {
+    var userName = req.body.user_name;
 
     console.log("this is the req" + req);
     console.log("this is the res" + res);
