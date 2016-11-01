@@ -1,0 +1,28 @@
+body {
+  text-align: center;
+}
+
+/*Footer*/
+
+.socIcon {
+    margin: 20px;
+    display: inline-block;
+}
+
+.social {
+    width: 62px;
+    height: 62px;
+    background-color: white;
+}
+
+.social:hover{
+    transition: all 1s ease;
+    -webkit-transform:scale(1.5); 
+    -moz-transform:scale(1.5); 
+    -ms-transform:scale(1.5); 
+    -o-transform:scale(1.5); 
+     transform:scale(1.5);
+     z-index: +10;
+}
+
+
