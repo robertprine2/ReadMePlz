@@ -48,7 +48,7 @@ app.post('/survey', function(req, res) {
     var userName = req.body.user_name;
     var wutUSay = req.body.text;
     
-    var surveyNameEnd = indexOf("^");
+    var surveyNameEnd = wutUSay.indexOf("^");
 
     var surveyName = wutUSay.substring(0, surveyNameEnd);
 
