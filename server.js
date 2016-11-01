@@ -48,10 +48,10 @@ app.get('/',  function(req, res) {
 
 app.post('/survey', function(req, res) {
     var userName = req.body.user_name;
-
+    var wutUSay = req.body.text;
     console.log("this is the req" + req);
     console.log("this is the res" + res);
-    var payload={"text": "This is a line of text in a channel.\nAnd this is another line of text."}
+    var payload={"text": "This is a line of text in a channel.\nAnd this is what you said: " + wutUSay}
 
     if (userName !== 'slackbot') {
         return res.status(200).json(payload);
