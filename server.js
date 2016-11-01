@@ -46,13 +46,18 @@ app.get('/',  function(req, res) {
 
 app.post('/survey', function(req, res) {
     var userName = req.body.user_name;
-    var wutUSay = req.body.text;
+    var userText = req.body.text;
+    var surveyName = "";
     
-    var surveyNameEnd = wutUSay.indexOf("^");
+    var surveyNameEnd = userText.indexOf("^");
+    if (surveyNameEnd != -1) {
+        surveyName = userText.substring(0, surveyNameEnd);
+    }
+    else {
+        surveyName = userText;
+    }
 
-    var surveyName = wutUSay.substring(0, surveyNameEnd);
-
-    var payload={"text": "This is a line of text in a channel.\nAnd this is what you said: " + wutUSay + "\n" + surveyName}
+    var payload={"text": "This is a line of text in a channel.\nAnd this is what you said: " + userText + "\n" + surveyName}
 
     if (userName !== 'slackbot') {
         return res.status(200).json(payload);
