@@ -7,6 +7,7 @@
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "mongojs": "^2.4.0",
+    "passport-slack": "0.0.6",
     "slack-node": "^0.1.8"
   },
   "devDependencies": {},
