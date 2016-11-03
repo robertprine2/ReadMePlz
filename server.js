@@ -3,7 +3,7 @@ var config = require('./log.js');
 var express = require('express');
 var bodyParser = require('body-parser');
 var Slack = require('slack-node');
-var passportSlack = require('passport-slack');
+var passport = require('passport-slack');
 
 webhookUri = "https://hooks.slack.com/services/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";
  
